@@ -1,6 +1,16 @@
 # Required variables
-variable "ssm_parameter_name" {
-  description = "SSM parameter name for the GitHub Runner token.<br>Example: `\"/github/runner/token\"`."
+variable "ssm_github_app_client_id" {
+  description = "SSM parameter for the GitHub Runner client ID.<br>Example: `\"/github/runner/client-id\"`."
+  type        = string
+}
+
+variable "ssm_github_app_installation_id" {
+  description = "SSM parameter for the GitHub Runner installation ID.<br>Example: `\"/github/runner/installation-id\"`."
+  type        = string
+}
+
+variable "ssm_github_app_private_key" {
+  description = "SSM parameter for the GitHub Runner private key.<br>Example: `\"/github/runner/private-key\"`."
   type        = string
 }
 

@@ -22,9 +22,13 @@ resource "aws_iam_policy" "this" {
     Version = "2012-10-17"
     Statement = concat([
       {
-        Action   = ["ssm:GetParameter*"]
-        Effect   = "Allow"
-        Resource = data.aws_ssm_parameter.this.arn
+        Action = ["ssm:GetParameter*"]
+        Effect = "Allow"
+        Resource = [
+          data.aws_ssm_parameter.github_app_client_id.arn,
+          data.aws_ssm_parameter.github_app_installation_id.arn,
+          data.aws_ssm_parameter.github_app_private_key.arn
+        ]
       },
       {
         Action   = ["ec2:CreateTags"]
@@ -159,7 +163,9 @@ module "user_data" {
     runner_group  = var.github_runner_group
     runner_labels = var.github_runner_labels
 
-    ssm_parameter_name = var.ssm_parameter_name
+    ssm_github_app_client_id       = var.ssm_github_app_client_id
+    ssm_github_app_installation_id = var.ssm_github_app_installation_id
+    ssm_github_app_private_key     = var.ssm_github_app_private_key
   }
 }
 
@@ -187,9 +193,9 @@ resource "aws_launch_template" "this" {
   image_id = data.aws_ami.ami.id
 
 
-# instance_market_options {
-#   market_type = "spot"
-# }
+  instance_market_options {
+    market_type = "spot"
+  }
 
   instance_type = var.ec2_instance_type
 

@@ -1,8 +1,17 @@
 data "aws_caller_identity" "current" {}
 
-data "aws_ssm_parameter" "this" {
-  name = var.ssm_parameter_name
+data "aws_ssm_parameter" "github_app_client_id" {
+  name = var.ssm_github_app_client_id
 }
+
+data "aws_ssm_parameter" "github_app_installation_id" {
+  name = var.ssm_github_app_installation_id
+}
+
+data "aws_ssm_parameter" "github_app_private_key" {
+  name = var.ssm_github_app_private_key
+}
+
 
 data "aws_ec2_instance_type" "this" {
   instance_type = var.ec2_instance_type

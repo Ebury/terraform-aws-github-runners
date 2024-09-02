@@ -1,8 +1,10 @@
 variable "config" {
   type = object({
-    region               = string
-    ssm_parameter_name   = string
-    cloudwatch_log_group = string
+    region                         = string
+    ssm_github_app_installation_id = string
+    ssm_github_app_client_id       = string
+    ssm_github_app_private_key     = string
+    cloudwatch_log_group           = string
 
     cloud_init_packages    = list(string)
     cloud_init_runcmds     = list(string)

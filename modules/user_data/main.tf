@@ -3,9 +3,11 @@ locals {
 
   user_data = templatefile(
     "${path.module}/cloud-init-ephemeral.yaml", {
-      REGION               = var.config.region
-      SSM_PARAMETER_NAME   = var.config.ssm_parameter_name
-      CLOUDWATCH_LOG_GROUP = var.config.cloudwatch_log_group
+      REGION                         = var.config.region
+      SSM_GITHUB_APP_CLIENT_ID       = var.config.ssm_github_app_client_id
+      SSM_GITHUB_APP_INSTALLATION_ID = var.config.ssm_github_app_installation_id
+      SSM_GITHUB_APP_PRIVATE_KEY     = var.config.ssm_github_app_private_key
+      CLOUDWATCH_LOG_GROUP           = var.config.cloudwatch_log_group
 
       PACKAGES    = var.config.cloud_init_packages
       RUNCMDS     = var.config.cloud_init_runcmds

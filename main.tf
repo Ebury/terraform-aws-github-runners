@@ -208,11 +208,6 @@ resource "aws_launch_template" "this" {
 
   user_data = base64gzip(module.user_data.user_data)
 
-  metadata_options {
-    http_endpoint = "enabled"
-    http_tokens   = "required"
-  }
-
   lifecycle {
     create_before_destroy = true
   }
@@ -331,10 +326,6 @@ resource "aws_instance" "this" {
 
   root_block_device {
     encrypted = true
-  }
-  metadata_options {
-    http_endpoint = "enabled"
-    http_tokens   = "required"
   }
 
   subnet_id = var.subnet_ids[0]

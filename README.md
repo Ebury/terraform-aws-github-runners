@@ -2,12 +2,12 @@
 
 Simple to use, self-hosted GitHub Action runners. Uses EC2 spot instances with configurable AutoScaling.
 
-[![GitHub repo link](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/images/icon.gif )](https://github.com/cloudandthings/terraform-aws-github-runners)
+[![GitHub repo link](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/images/icon.gif )](https://github.com/Ebury/terraform-aws-github-runners)
 
 ---
 
-[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/cloudandthings/terraform-aws-github-runners/graphs/commit-activity)
-[![Test Status](https://github.com/cloudandthings/terraform-aws-github-runners/actions/workflows/main.yml/badge.svg)](https://github.com/cloudandthings/terraform-aws-github-runners/actions/workflows/main.yml)
+[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/Ebury/terraform-aws-github-runners/graphs/commit-activity)
+[![Test Status](https://github.com/Ebury/terraform-aws-github-runners/actions/workflows/main.yml/badge.svg)](https://github.com/Ebury/terraform-aws-github-runners/actions/workflows/main.yml)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.13.0-blue)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
@@ -41,7 +41,7 @@ A possible workaround could be to [run jobs in a container](https://docs.github.
 
 ## How it works
 
-[![Infrastructure diagram](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/images/runner.svg)](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/images/runner.svg)
+[![Infrastructure diagram](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/images/runner.svg)](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/images/runner.svg)
 
 An AutoScaling group is created to spin up Spot EC2 instances on a schedule. The instances retrieve a pre-configured GitHub access token from AWS SSM Parameter Store, and start one (or more) ephemeral actions runner processes. These authenticate with GitHub and wait for work.
 
@@ -61,7 +61,7 @@ A full list of created resources is shown below.
 Create a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 Add it to AWS Systems Manager Parameter Store with the `SecureString` type.
 
-[![Parameter Store configuration](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/images/ssm.png)](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/images/ssm.png )
+[![Parameter Store configuration](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/images/ssm.png)](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/images/ssm.png )
 
 
 ### 2. Configure module
@@ -69,8 +69,8 @@ Configure and deploy the module using Terraform. See examples below.
 
 ## More info
 
-- Found an issue? Want to help? [Contribute](https://github.com/cloudandthings/terraform-aws-github-runners/.github/contribute.md).
-- Review a [cost estimate](https://github.com/cloudandthings/terraform-aws-github-runners/blob/main/docs/cost_estimate.md).
+- Found an issue? Want to help? [Contribute](https://github.com/Ebury/terraform-aws-github-runners/.github/contribute.md).
+- Review a [cost estimate](https://github.com/Ebury/terraform-aws-github-runners/blob/main/docs/cost_estimate.md).
 
 <!-- BEGIN_TF_DOCS -->
 ## Module Docs

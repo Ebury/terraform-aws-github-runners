@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.4.0](https://github.com/Ebury/terraform-aws-github-runners/compare/v1.3.0...v1.4.0) (2025-11-12)
+## [1.3.2](https://github.com/Ebury/terraform-aws-github-runners/compare/v1.3.0...v1.3.2) (2025-11-12)
 ### Features
 * Update terraform provider to v5
 
